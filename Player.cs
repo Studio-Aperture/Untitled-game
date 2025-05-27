@@ -61,7 +61,7 @@ public partial class Player : CharacterBody3D
 		basisX.Y = 0; 
 		basisZ.Y = 0;
 		basisX = basisX.Normalized();
-		basisZ = basisZ.Normalized()-;
+		basisZ = basisZ.Normalized();
 
 		Vector3 direction = basisX * _direction.X + basisZ * _direction.Z;
 
