@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\there\\OneDrive\\Documents\\Lost\\Lost\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AEA1A441-8A78-4E6E-A540-A4297E6607C1}|Lost.csproj|c:\\users\\there\\onedrive\\documents\\lost\\lost\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEA1A441-8A78-4E6E-A540-A4297E6607C1}|Lost.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AEA1A441-8A78-4E6E-A540-A4297E6607C1}|Lost.csproj|c:\\users\\there\\onedrive\\documents\\lost\\lost\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AEA1A441-8A78-4E6E-A540-A4297E6607C1}|Lost.csproj|solutionrelative:player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEA1A441-8A78-4E6E-A540-A4297E6607C1}|Lost.csproj|c:\\users\\there\\onedrive\\documents\\lost\\lost\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEA1A441-8A78-4E6E-A540-A4297E6607C1}|Lost.csproj|solutionrelative:main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,11 +18,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Main.cs",
               "DocumentMoniker": "C:\\Users\\there\\OneDrive\\Documents\\Lost\\Lost\\Main.cs",
               "RelativeDocumentMoniker": "Main.cs",
@@ -35,13 +35,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\there\\OneDrive\\Documents\\Lost\\Lost\\Player.cs",
               "RelativeDocumentMoniker": "Player.cs",
               "ToolTip": "C:\\Users\\there\\OneDrive\\Documents\\Lost\\Lost\\Player.cs",
               "RelativeToolTip": "Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-04T18:01:31.044Z",
               "EditorCaption": ""
