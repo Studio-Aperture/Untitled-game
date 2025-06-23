@@ -2,7 +2,7 @@ config_version=5
 
 [application]
 
-config/name="Lost"
+config/name="Untitled game"
 run/main_scene="uid://cro7aksa3lnvh"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
