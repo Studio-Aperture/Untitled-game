@@ -7,9 +7,8 @@ public partial class Player : CharacterBody3D
     [Export] public float Speed = 7.5f;
     [Export] public float MouseSensitivity = 0.002f;
     [Export] public float VerticalLimit = 50.0f;
-
-    private Vector3 _direction = Vector3.Zero;
     [Export] private SpringArm3D _camera;
+    private Vector3 _direction = Vector3.Zero;
     private float _rotationX = 0.0f;
     private float gravity = 15.5f;
     private float jumpPower = 5.0f;
@@ -102,5 +101,4 @@ public partial class Player : CharacterBody3D
         Velocity = velocity;
         MoveAndSlide();
     }
-}
-    
+}    
