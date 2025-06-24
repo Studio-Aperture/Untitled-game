@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bv00xqqh03858"]
+[gd_scene load_steps=8 format=3 uid="uid://bv00xqqh03858"]
 
 [ext_resource type="PackedScene" uid="uid://b8r7at5p8vhf2" path="res://player.tscn" id="1_f3sb7"]
 
@@ -16,8 +16,13 @@ sky_material = SubResource("ProceduralSkyMaterial_f3sb7")
 background_mode = 2
 sky = SubResource("Sky_fj7yv")
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_fj7yv"]
-size = Vector2(10, 10)
+[sub_resource type="BoxMesh" id="BoxMesh_f3sb7"]
+size = Vector3(100, 0, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f3sb7"]
+size = Vector3(100, 0, 10)
 
 [node name="World" type="Node3D"]
 
@@ -29,8 +34,15 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 light_color = Color(0.703629, 0.271818, 0.477391, 1)
 shadow_enabled = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_fj7yv")
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_f3sb7")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fj7yv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_f3sb7")
 
 [node name="Player" parent="." instance=ExtResource("1_f3sb7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.941992, 0)

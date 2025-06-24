@@ -1,20 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8r7at5p8vhf2"]
 
 [ext_resource type="Script" uid="uid://cehcjdgk8cjtm" path="res://Player.cs" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://dkmxpnm1hemhb" path="res://Player Model.glb" id="2_onrkg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_4flbx"]
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("_camera")]
 script = ExtResource("1_4flbx")
 _camera = NodePath("SpringArm3D")
 
+[node name="Player Model" parent="." instance=ExtResource("2_onrkg")]
+transform = Transform3D(-0.249947, 0, -0.00516578, 0, 0.25, 0, 0.00516578, 0, -0.249947, 0, 0.295457, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_sh265")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_4flbx")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.859174, 0.511683, 0, -0.511683, 0.859174, 0.365215, 0.464655, 1.31774)
