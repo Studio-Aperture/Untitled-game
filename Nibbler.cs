@@ -68,6 +68,6 @@ public partial class Nibbler : CharacterBody3D
 
             Velocity = velocity;
             MoveAndSlide();
-        }
+        } 
     }
 }

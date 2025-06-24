@@ -57,6 +57,7 @@ mesh = SubResource("ArrayMesh_sknnp")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.041744, 0)
 shape = SubResource("CapsuleShape3D_sh265")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]

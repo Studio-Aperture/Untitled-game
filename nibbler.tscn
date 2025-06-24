@@ -59,7 +59,7 @@ script = ExtResource("1_uuqto")
 detectionRadius = NodePath("radius")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.336008, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.208648, 0)
 shape = SubResource("CapsuleShape3D_qwrc8")
 
 [node name="Model" type="Node3D" parent="."]
