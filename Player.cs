@@ -82,6 +82,7 @@ public partial class Player : CharacterBody3D
         // gravity
         if (IsOnFloor())
         {
+            Speed = 7.5f;
             if (Input.IsActionPressed("jump"))
             {
                 velocity.Y = jumpPower; // or whatever your jump strength is
@@ -94,6 +95,7 @@ public partial class Player : CharacterBody3D
         else
         {
             velocity.Y -= gravity * (float)delta;
+            Speed = 9.5f;
         }
 
         // apply final velocity

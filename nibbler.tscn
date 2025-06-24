@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://b8r7at5p8vhf2"]
+[gd_scene load_steps=9 format=4 uid="uid://dcddyrqs2j6ps"]
 
-[ext_resource type="Script" uid="uid://cehcjdgk8cjtm" path="res://Player.cs" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://ufy1k27rbq7p" path="res://Nibbler.cs" id="1_uuqto"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qwrc8"]
+height = 2.84814
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqf4b"]
 resource_name = "Material.002"
@@ -43,24 +46,35 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_biao3")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ued3c"]
+albedo_color = Color(1, 0.466667, 0.435294, 1)
 
-[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("_camera")]
-script = ExtResource("1_4flbx")
-_camera = NodePath("SpringArm3D")
+[sub_resource type="BoxMesh" id="BoxMesh_uuqto"]
 
-[node name="Player Model" type="Node3D" parent="."]
-transform = Transform3D(-0.25, 0, 2.18557e-08, 0, 0.25, 0, -2.18557e-08, 0, -0.25, 0, 0.295457, 0)
+[sub_resource type="SphereShape3D" id="SphereShape3D_uuqto"]
+radius = 7.5
 
-[node name="Cube" type="MeshInstance3D" parent="Player Model"]
-mesh = SubResource("ArrayMesh_sknnp")
-skeleton = NodePath("")
+[node name="nibbler" type="CharacterBody3D" node_paths=PackedStringArray("detectionRadius")]
+script = ExtResource("1_uuqto")
+detectionRadius = NodePath("radius")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_sh265")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.336008, 0)
+shape = SubResource("CapsuleShape3D_qwrc8")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.859174, 0.511683, 0, -0.511683, 0.859174, 0.365215, 0.464655, 1.31774)
-spring_length = 2.0
+[node name="Model" type="Node3D" parent="."]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0.088272, 0)
 
-[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+[node name="Cube" type="MeshInstance3D" parent="Model"]
+mesh = SubResource("ArrayMesh_sknnp")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_ued3c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21218e-07, 1.99808, 1.38657)
+mesh = SubResource("BoxMesh_uuqto")
+
+[node name="radius" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="radius"]
+shape = SubResource("SphereShape3D_uuqto")

@@ -1,6 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv00xqqh03858"]
+[gd_scene load_steps=9 format=3 uid="uid://bv00xqqh03858"]
 
 [ext_resource type="PackedScene" uid="uid://b8r7at5p8vhf2" path="res://player.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://dcddyrqs2j6ps" path="res://nibbler.tscn" id="2_fj7yv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_f3sb7"]
+size = Vector3(100, 0, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f3sb7"]
+size = Vector3(100, 0, 10)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3sb7"]
 sky_top_color = Color(0.715665, 0.250465, 0.47255, 1)
@@ -16,15 +25,23 @@ sky_material = SubResource("ProceduralSkyMaterial_f3sb7")
 background_mode = 2
 sky = SubResource("Sky_fj7yv")
 
-[sub_resource type="BoxMesh" id="BoxMesh_f3sb7"]
-size = Vector3(100, 0, 10)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fj7yv"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_f3sb7"]
-size = Vector3(100, 0, 10)
-
 [node name="World" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.941992, 0)
+
+[node name="nibbler" parent="." instance=ExtResource("2_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2873, 1.66075, 0.319586)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("BoxMesh_f3sb7")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_fj7yv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_f3sb7")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tlwt5")
@@ -33,16 +50,3 @@ environment = SubResource("Environment_tlwt5")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 light_color = Color(0.703629, 0.271818, 0.477391, 1)
 shadow_enabled = true
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-mesh = SubResource("BoxMesh_f3sb7")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_fj7yv")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("BoxShape3D_f3sb7")
-
-[node name="Player" parent="." instance=ExtResource("1_f3sb7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.941992, 0)
