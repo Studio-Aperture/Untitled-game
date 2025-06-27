@@ -12,9 +12,6 @@ size = Vector3(100, 0, 10)
 size = Vector3(100, 0, 10)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3sb7"]
-sky_top_color = Color(0.715665, 0.250465, 0.47255, 1)
-sky_horizon_color = Color(0.728074, 0.633022, 0.747181, 1)
-ground_bottom_color = Color(0.161378, 0.24637, 0.480921, 1)
 ground_horizon_color = Color(0.728074, 0.633022, 0.747181, 1)
 energy_multiplier = 0.75
 
