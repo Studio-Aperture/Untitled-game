@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class UI : Control
+public partial class UI : CanvasLayer
 {
     [Export] public TextureProgressBar HealthFill;
     [Export] public float MaxHealth = 100f;
@@ -17,7 +17,7 @@ public partial class UI : Control
 
     public override void _PhysicsProcess(double delta)
     {
-        if (Input.IsActionPressed("jump"))
+        if (Input.IsActionPressed("ui-test"))
             RemoveHealth(100); // For testing
         else
             RegenHealth((float)delta);

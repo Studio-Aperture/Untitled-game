@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://b8r7at5p8vhf2"]
+[gd_scene load_steps=7 format=4 uid="uid://b8r7at5p8vhf2"]
 
 [ext_resource type="Script" uid="uid://cehcjdgk8cjtm" path="res://Player.cs" id="1_4flbx"]
+[ext_resource type="PackedScene" uid="uid://bfaeomgv8vtso" path="res://ui.tscn" id="2_onrkg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqf4b"]
 resource_name = "Material.002"
@@ -65,3 +66,5 @@ transform = Transform3D(1, 0, 0, 0, 0.859174, 0.511683, 0, -0.511683, 0.859174, 
 spring_length = 2.0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+
+[node name="UI" parent="." instance=ExtResource("2_onrkg")]

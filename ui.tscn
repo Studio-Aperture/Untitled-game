@@ -3,31 +3,21 @@
 [ext_resource type="Script" uid="uid://dabc6qoqjj04l" path="res://UI.cs" id="1_fyqef"]
 [ext_resource type="Texture2D" uid="uid://cwxqoggtx6ms2" path="res://health icon.png" id="2_m6e0p"]
 
-[node name="UI" type="Control" node_paths=PackedStringArray("HealthFill")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("HealthFill")]
 script = ExtResource("1_fyqef")
 HealthFill = NodePath("HFill")
 
 [node name="HBody" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 1105.0
+offset_left = 998.0
 offset_top = 76.0
-offset_right = 1233.0
+offset_right = 1126.0
 offset_bottom = 204.0
 texture = ExtResource("2_m6e0p")
 
 [node name="HFill" type="TextureProgressBar" parent="."]
-layout_mode = 0
-offset_left = 1105.0
+offset_left = 998.0
 offset_top = 76.0
-offset_right = 1233.0
+offset_right = 1126.0
 offset_bottom = 204.0
 fill_mode = 3
 texture_progress = ExtResource("2_m6e0p")
